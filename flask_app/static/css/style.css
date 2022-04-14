@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Beau Rivage', cursive;
+    background-color: white;
+    color: rebeccapurple;
+}
+
+a {
+    color: rebeccapurple;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+a:hover {
+    font-size: ;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+h1, h2 {
+    font-weight: 800;
+    font-size: 48px;
+}
+
+.container {
+    width 100%;
+    margin: 0 auto;
+}
+
+.container header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    border-bottom: 1px solid lightgray;
+}
+
+.container header nav {
+    width: 1000px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container header nav a{
+    margin-right: 50px;
+    color: rebeccapurple;
+    font-weight: 500;
+}
+
+/* authors style */
+
+.contentAuthors {
+    min-width: 850px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+    padding-top: 25px;
+}
+
+.leftColumn {
+    flex: 3;
+}
+
+.addAuthor {
+    background-color: lightblue;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 6px;
+    padding: 50px 0;
+}
+
+.addAuthor h1 {
+    border-bottom: 1px solid white;
+    width: 75%;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.nameWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nameWrap input {
+    height: 25px;
+}
+
+.addAuthor form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    font-size: 32px;
+}
+
+.addAuthor input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.addAuthor form button{
+    padding: 5px 10px;
+    width: 100px;
+    color: white;
+    background-color: rebeccapurple;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Beau Rivage', cursive;
+    font-size: 24px;
+}
+
+
+.rightColumn {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.authorList {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+    background-color: lightblue;
+    padding: 50px 0;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.authorList h1 {
+    border-bottom: 1px solid white;
+    width: 75%;
+    padding-bottom: 25px;
+}
+
+.authorWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#addAuthor {
+    align-self: flex-start;
+    color: rebeccapurple;
+    border: 1px solid black;
+}
+
+/* author styles */
+
+.contentAuthor {
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+    background-color: lightblue;
+    padding: 50px;
+    border-radius: 6px;
+}
+
+.authorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rebeccapurple;
+    padding-bottom: 25px;
+}
+
+.authorHeader h1 {
+    padding-bottom: 25px;
+}
+
+.authorHeader form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 24px;
+}
+
+.authorHeader form button {
+
+}
+
+.authorHeader form select {
+    padding: 0 5px;
+}
+
+.contentAuthor table {
+    border: 1px solid white;
+}
+
+.contentAuthor tr, th, td {
+    border: 1px solid white;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 32px;
+}
+
+.contentAuthor th {
+    border: 1px solid white;
+    padding: 5px 10px;
+    font-weight: 500;
+}
+
+/* ninja_form styles */
+
+.contentNewNinja {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+    background-color: #2a2a2a;
+    padding: 50px;
+    border-radius: 6px;
+}
+
+.contentNewNinja h1{
+    width: 100%;
+    border-bottom: 1px solid white;
+    padding-bottom: 25px;
+}
+
+.contentNewNinja form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.optionWrapper {
+    display: flex;
+    gap: 15px;
+}
+
+
+#age {
+    width: 40px;
+}
+
+form button{
+    padding: 5px 10px;
+    width: 100px;
+    color: white;
+    background-color: #81a0ea;
+    border: none;
+    border-radius: 6px;
+    align-self: center;
+}

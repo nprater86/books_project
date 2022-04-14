@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ (url_for('static',filename='../static/css/style.css')) }}">
+    <title>{{ author.first_name + " " + author.last_name }}'s Faves</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="/authors">Authors</a>
+                <a href="/books">Books</a>
+            </nav>
+        </header>
+        <div class="contentAuthor">
+            <div class="authorHeader">
+                <h1>{{ author.first_name + " " + author.last_name }}</h1>
+                {% if unfaved_books|length > 0: %}
+                <form action="/add_favorite" method="post">
+                    <input type="hidden" name="author_id" value="{{author.id}}">
+                    <label for="book_id"></label>
+                    <select name="book_id" id="">
+                        {% for book in unfaved_books %}
+                            <option value="{{book.id}}">{{book.title}}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Add to Favorites</button>
+                </form>
+                {% endif %}
+            </div>
+            <h2>Favorite Books:</h2>
+            {% if books[0].id != None: %}
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th># of Pages</th>
+                    </tr>
+                        {% for book in books %}
+                            <tr>
+                                <td>{{ book.title }}</td>
+                                <td>{{ book.num_of_pages }}</td>
+                            </tr>
+                        {% endfor %}
+                </table>
+            {% else %}
+                <h3>No favorites!</h3>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

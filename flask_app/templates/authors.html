@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ (url_for('static',filename='../static/css/style.css')) }}">
+    <title>Authors</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="/authors">Authors</a>
+                <a href="/books">Books</a>
+            </nav>
+        </header>
+        <div class="contentAuthors">
+            <div class="leftColumn">
+                <div class="addAuthor">
+                    <h1>New Author</h1>
+                    <form action="/create_author" method="post">
+                        <div class="nameWrap">
+                            <label for="first_name">First Name: </label>
+                            <input type="text" name="first_name" id="">
+                            <label for="last_name">Last Name: </label>
+                            <input type="text" name="last_name" id="">
+                        </div>
+                        <button type="submit">Create Author</button>
+                    </form>
+                </div>
+            </div>
+            <div class="rightColumn">
+                <div class="authorList">
+                    <h1>All Authors</h1>
+                    <div class="authorWrap">
+                        {% for author in authors %}
+                        <a href="/author/{{ author.id }}"> {{ author.first_name + ' ' + author.last_name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <a href="" id="addBook">Add a Book</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ (url_for('static',filename='../static/css/style.css')) }}">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="/authors">Authors</a>
+                <a href="/books">Books</a>
+            </nav>
+        </header>
+        <div class="contentAuthor">
+            <div class="authorHeader">
+                <h1>{{ book.title }}</h1>
+                {% if unfaved_authors|length > 0: %}
+                <form action="/add_author" method="post">
+                    <input type="hidden" name="book_id" value="{{book.id}}">
+                    <label for="author_id"></label>
+                    <select name="author_id" id="">
+                        {% for author in unfaved_authors %}
+                            <option value="{{author.id}}">{{ author.first_name ~ " " ~ author.last_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit">Add to Favorited</button>
+                </form>
+                {% endif %}
+            </div>
+            <h2>Favorited Authors:</h2>
+            {% if authors[0].id != None: %}
+                <table>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                        {% for author in authors %}
+                            <tr>
+                                <td>{{ author.first_name ~ " " ~ author.last_name }}</td>
+                            </tr>
+                        {% endfor %}
+                </table>
+            {% else %}
+                <h3>No favorites!</h3>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
